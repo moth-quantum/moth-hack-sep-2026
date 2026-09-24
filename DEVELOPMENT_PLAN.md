@@ -16,14 +16,19 @@ hybrid venue, RSVP button, submission button (form pending), platform link. Edit
 
 ## Event facts (Slack, Sept 2026)
 - Fri 25: private opening, invite only (mentioned, no link).
-- Sat 26 – Sun 27: hackathon live at 19 D'Arblay Street, W1F 8ED. Ground floor walk-in exhibition + demos; basement hackathon lounge, RSVP, 3-hour seats.
+- Sat 26 (10:00–18:00) – Sun 27 (11:00–17:00): hackathon live at 19 D'Arblay Street, W1F 8ED. Ground floor walk-in exhibition + demos; basement hackathon lounge, RSVP, 3-hour seats.
 - Submissions open 26 Sept, close 2 Oct. Winners Mon 5 Oct on Discord.
 - Online: platform.mothquantum.com, Discord, Airtable submission form.
 - RSVP: https://luma.com/wmrrdpcj
 
+## Hosting
+GitHub Pages via Actions (`.github/workflows/pages.yml`). Next.js `output: "export"`, `trailingSlash: true`,
+`basePath` from `NEXT_PUBLIC_BASE_PATH` (`/moth-hack-sep-2026` in CI, empty locally). Brand `@font-face`
+rules are injected in `app/layout.tsx` so font URLs carry the base path. No Vercel dependency.
+
 ## Architecture
 - `content/event.ts` — single source of truth (copy, dates, links, TBC flags).
-- `app/globals.css` — tokens (`@theme`), Riforma `@font-face` slots with fallbacks, `.page` grid, viewport lock, `rise`/`blink` keyframes, reduced-motion guard.
+- `app/globals.css` — tokens (`@theme`), font stacks with fallbacks, `.page` grid, viewport lock, `rise`/`blink` keyframes, reduced-motion guard.
 - `app/page.tsx` — 3-row grid: header / hero (copy + CTAs left, TypeGrid right) / schedule + venue.
 - `components/` — `Logo`, `TypeGrid`, `Schedule`, `Cta` (+ `TextLink`).
 
@@ -37,12 +42,12 @@ staggered delay; disabled under `prefers-reduced-motion`.
 scales with viewport width between two sizes known to fit at 1024×768 and 1440×900.
 
 ## Outstanding (all land in `content/event.ts` or `public/fonts/`)
-- [ ] Public Sat/Sun opening and closing times (from luma.com/wmrrdpcj).
+- [x] Public opening hours: Sat 10:00–18:00, Sun 11:00–17:00.
 - [ ] Riforma LL Regular/Medium/Bold + Riforma Mono woff2 (licence held by Boris).
 - [ ] Airtable submission form URL (26 Sept).
 - [ ] Discord invite URL; published challenges URL.
 - [ ] Confirm postcode W1F 8ED (one message said 8EF).
-- [ ] v0 Git Import by a Vercel org admin; optional `V0_API_KEY` + `api.v0.dev` allow-listing for API sync.
+- [ ] Enable GitHub Pages (Settings → Pages → Source: GitHub Actions), then re-run the deploy workflow.
 
 ## Verification
 `npm run build`, `npm run lint`; Playwright at 1440×900, 1280×800, 1024×768 asserts no vertical or

@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
-/* ---------- Brand type: licensed Lineto files go in /public/fonts (see public/fonts/README.md).
-   Until they land, the stacks below fall back to Helvetica / a system mono. ---------- */
-@font-face { font-family: "Riforma LL"; src: url("/fonts/RiformaLL-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Riforma LL"; src: url("/fonts/RiformaLL-Medium.woff2") format("woff2");  font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Riforma LL"; src: url("/fonts/RiformaLL-Bold.woff2") format("woff2");    font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Riforma Mono"; src: url("/fonts/RiformaMono-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+/* Brand @font-face rules are injected in app/layout.tsx so their URLs include the GitHub Pages base path. */
 
 /* ---------- Brand tokens (Moth_Hack-Identity v1, Figma) ---------- */
 @theme {

@@ -15,13 +15,13 @@ export const event = {
     "Build and create with quantum computing – no quantum experience required. Pick a challenge and enter online or in person. The Moth team will be on hand to support your build.",
   smallPrint: "Free · Walk-ins welcome · Hackathon lounge seats are limited, so RSVP.",
 
-  // ISO dates for structured data
-  dates: { start: "2026-09-26", end: "2026-09-27" },
+  // ISO date-times (Europe/London, BST) for structured data
+  dates: { start: "2026-09-26T10:00:00+01:00", end: "2026-09-27T17:00:00+01:00" },
 
   schedule: [
     { day: "Fri 25 Sept", label: "Private opening", note: "Invite only" },
-    { day: "Sat 26 Sept", label: "Hackathon live", note: "TBC – opening hours from Luma" },
-    { day: "Sun 27 Sept", label: "Hackathon live + showcase", note: "TBC – opening hours from Luma" },
+    { day: "Sat 26 Sept", label: "Hackathon live", note: "10:00–18:00" },
+    { day: "Sun 27 Sept", label: "Hackathon live + showcase", note: "11:00–17:00" },
     { day: "26 Sept → 2 Oct", label: "Submissions open", note: "Online, worldwide" },
     { day: "Mon 5 Oct", label: "Winners announced", note: "On Discord" },
   ],
