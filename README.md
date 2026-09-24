@@ -44,7 +44,9 @@ On viewports ≥ 1024 px wide **and** landscape, the page is locked to `100dvh` 
 | any other branch or PR | lint + build only, never deploys |
 
 Work on a feature branch, check its Actions run is green, then merge into `main` to publish.
-Pages source is set to **GitHub Actions** (Settings → Pages).
+Pages source is set to **GitHub Actions** (Settings → Pages). Never switch it back to "Deploy from a branch": that runs Jekyll on the raw repo files and serves this README instead of the site.
+
+If the live URL shows stale content after a settings change, push a new commit to `main`. Pages keys each deployment by commit SHA, so re-deploying a SHA it has already published (e.g. by a Jekyll build) keeps the old build.
 
 Custom domain later: add it under Settings → Pages, then set `NEXT_PUBLIC_BASE_PATH` to an empty string in the workflow.
 
