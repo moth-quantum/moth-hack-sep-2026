@@ -1,3 +1,4 @@
+import { Challenges } from "@/components/Challenges";
 import { Cta, TextLink } from "@/components/Cta";
 import { Logo } from "@/components/Logo";
 import { Schedule } from "@/components/Schedule";
@@ -63,11 +64,9 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="lg:col-span-7 min-w-0 h-[19rem] sm:h-[22rem] lg:h-auto lg:min-h-0 relative">
-          <TypeGrid className="h-full" />
-          <p className="absolute bottom-0 right-0 font-mono text-[0.8rem] bg-paper pl-3 pt-1">
-            <TextLink link={event.links.platform} />
-          </p>
+        <div className="lg:col-span-7 min-w-0 lg:min-h-0 grid gap-8 sm:grid-cols-[auto_1fr] items-start">
+          <TypeGrid cols={2} className="hidden sm:block h-[26rem] lg:h-full lg:self-stretch w-[21ch]" />
+          <Challenges />
         </div>
       </section>
 
@@ -87,7 +86,7 @@ export default function Page() {
           </p>
           <p className="text-moth/80">{event.venue.online}</p>
           <p className="font-mono text-[0.8rem] flex flex-wrap gap-x-5 gap-y-1 items-start sm:justify-end lg:justify-end content-start">
-            <TextLink link={event.links.challenges} />
+            <TextLink link={event.links.platform} />
             <TextLink link={event.links.discord} />
           </p>
         </div>

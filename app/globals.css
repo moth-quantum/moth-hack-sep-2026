@@ -64,3 +64,17 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
 }
+
+/* Challenge brief overlay (native popover) */
+.challenge-pop {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  max-width: min(34rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border: 1px solid var(--color-moth);
+  background: var(--color-paper);
+  color: var(--color-moth);
+}
+.challenge-pop::backdrop { background: rgb(25 35 142 / 0.18); }

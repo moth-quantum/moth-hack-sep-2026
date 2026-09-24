@@ -30,7 +30,10 @@ rules are injected in `app/layout.tsx` so font URLs carry the base path. No Verc
 - `content/event.ts`: single source of truth (copy, dates, links, TBC flags).
 - `app/globals.css`: tokens (`@theme`), font stacks with fallbacks, `.page` grid, viewport lock, `rise`/`blink` keyframes, reduced-motion guard.
 - `app/page.tsx`: 3-row grid: header / hero (copy + CTAs left, TypeGrid right) / schedule + venue.
-- `components/`: `Logo`, `TypeGrid`, `Schedule`, `Cta` (+ `TextLink`).
+- `components/`: `Logo`, `TypeGrid`, `Schedule`, `Challenges`, `Cta` (+ `TextLink`).
+
+### Challenges
+10 challenges in 3 tiers (Beginner £100, Intermediate £150, Expert £200 per challenge), copy verbatim from the Moth team in `content/event.ts`. The page lists tier, prize and numbered titles; each title opens its brief in a native `popover` overlay, so the page stays one screen tall.
 
 ### TypeGrid maths
 Row `i` shows `"Moth_Hack".slice(0, L(i))` with `L(i) = 9 − |(i mod 16) − 8|`: a triangle wave of period 16
@@ -45,7 +48,8 @@ scales with viewport width between two sizes known to fit at 1024×768 and 1440�
 - [x] Public opening hours: Sat 10:00 to 18:00, Sun 11:00 to 17:00.
 - [ ] Riforma LL Regular/Medium/Bold + Riforma Mono woff2 (licence held by Boris).
 - [ ] Airtable submission form URL (26 Sept).
-- [ ] Discord invite URL; published challenges URL.
+- [x] Discord invite: https://discord.gg/N9y6URcYS
+- [x] Challenges and prizes on the page.
 - [ ] Confirm postcode W1F 8ED (one message said 8EF).
 - [x] GitHub Pages enabled (Source: GitHub Actions), deploying from `main`.
 

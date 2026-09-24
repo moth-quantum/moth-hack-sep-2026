@@ -35,12 +35,43 @@ export const event = {
     online: "Online: Moth Platform, Discord, submissions",
   },
 
+  // Challenge copy supplied by the Moth team (24 Sept). Keep verbatim.
+  challenges: [
+    {
+      tier: "Beginner",
+      prize: "£100 prize per challenge",
+      items: [
+        { n: 1, title: "One image, one engine", brief: "Run an image through a visual engine (Blur, Tessa, or another) and submit the result with the parameters used." },
+        { n: 2, title: "Make it audible", brief: "Use an Atlas engine for sound production. Submit an audio file (song, sample, sound effect) with a summary of your workflow." },
+        { n: 3, title: "Three dimensions", brief: "Use an engine to do something 3-dimensional, e.g. Produce a video where the Entanglement Shader has been applied to a 3D asset." },
+      ],
+    },
+    {
+      tier: "Intermediate",
+      prize: "£150 prize per challenge",
+      items: [
+        { n: 4, title: "Moving image", brief: "Use at least one engine in a video piece. Any format." },
+        { n: 5, title: "Quantum game", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam." },
+        { n: 6, title: "Daisy Chain", brief: "Use as many engines as possible in a single project. Measured on number and effective use." },
+        { n: 7, title: "Make a VST or AU", brief: "Build a music plugin using at least one engine. Submit the plugin and audio examples of it in use." },
+        { n: 8, title: "Make a web app", brief: "Build a web app that calls the Atlas API. Submit a link and a short description of what it does." },
+      ],
+    },
+    {
+      tier: "Expert",
+      prize: "£200 prize per challenge",
+      items: [
+        { n: 9, title: "Quantum-native 1", brief: "Provide a repo of a quantum application that runs a process on some kind of media (e.g. a video or a game). We're especially interested in applications that use the Atlas API in some way." },
+        { n: 10, title: "Quantum-native 2", brief: "Provide a python notebook demonstrating how you've used the API to build a workflow generating some kind of media or application (e.g. a game)." },
+      ],
+    },
+  ],
+
   links: {
     rsvp: { href: "https://luma.com/wmrrdpcj", label: "RSVP (Luma)" } as Link,
     submit: { href: null, label: "Submit your project", pending: "Submissions open 26 Sept" } as Link,
     platform: { href: "https://platform.mothquantum.com", label: "platform.mothquantum.com" } as Link,
     discord: { href: "https://discord.gg/N9y6URcYS", label: "Discord" } as Link,
-    challenges: { href: null, label: "See the challenges", pending: "Challenges: coming soon" } as Link,
   },
 
   organiser: { name: "Moth", href: "https://mothquantum.com" },
