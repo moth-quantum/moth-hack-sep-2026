@@ -57,7 +57,6 @@ export default function Page() {
           <div className="rise flex flex-wrap items-center gap-3 pt-1" style={{ ["--i" as string]: 4 }}>
             <Cta link={event.links.rsvp} />
             <Cta link={event.links.submit} variant="outline" />
-            <span className="font-mono text-[0.75rem] text-moth/70">{event.smallPrint}</span>
           </div>
         </div>
 

@@ -14,7 +14,6 @@ export const event = {
   dateline: "26 + 27 Sept 2026, Soho, London",
   // Official copy (approved 4 Sept): keep verbatim, including the dash.
   hook: "Build and create with quantum computing – no quantum experience required.",
-  smallPrint: "Free entry",
 
   // ISO date-times (Europe/London, BST) for structured data
   dates: { start: "2026-09-26T10:00:00+01:00", end: "2026-09-27T17:00:00+01:00" },

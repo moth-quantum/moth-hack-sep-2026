@@ -5,7 +5,7 @@ export function Schedule() {
   return (
     <section aria-labelledby="timeline-h">
       <h2 id="timeline-h" className="font-mono text-[0.72rem] uppercase tracking-wide mb-3">
-        Timeline · 2026
+        Timeline
       </h2>
       <ol className="grid grid-cols-1 lg:grid-cols-5">
         {event.schedule.map((s, i) => (
