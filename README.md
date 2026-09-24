@@ -36,11 +36,15 @@ On viewports ≥ 1024 px wide **and** landscape, the page is locked to `100dvh` 
 
 ## Deploy (GitHub Pages)
 
-`.github/workflows/pages.yml` runs on every push to `claude/charming-hopper-yc86fj` (the default branch) or `main`:
-lint, static build with `NEXT_PUBLIC_BASE_PATH=/moth-hack-sep-2026`, upload `out/`, deploy.
+`.github/workflows/pages.yml`:
 
-One-time setup by a repo admin: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-Then re-run the latest "Deploy to GitHub Pages" run from the Actions tab (or push any commit).
+| Branch | What runs |
+|---|---|
+| `main` | lint, static build with `NEXT_PUBLIC_BASE_PATH=/moth-hack-sep-2026`, deploy to Pages |
+| any other branch or PR | lint + build only, never deploys |
+
+Work on a feature branch, check its Actions run is green, then merge into `main` to publish.
+Pages source is set to **GitHub Actions** (Settings → Pages).
 
 Custom domain later: add it under Settings → Pages, then set `NEXT_PUBLIC_BASE_PATH` to an empty string in the workflow.
 

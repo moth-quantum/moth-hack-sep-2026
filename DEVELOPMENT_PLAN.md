@@ -22,7 +22,7 @@ hybrid venue, RSVP button, submission button (form pending), platform link. Edit
 - RSVP: https://luma.com/wmrrdpcj
 
 ## Hosting
-GitHub Pages via Actions (`.github/workflows/pages.yml`). Next.js `output: "export"`, `trailingSlash: true`,
+GitHub Pages via Actions (`.github/workflows/pages.yml`), deployed from `main` only; other branches lint + build. Next.js `output: "export"`, `trailingSlash: true`,
 `basePath` from `NEXT_PUBLIC_BASE_PATH` (`/moth-hack-sep-2026` in CI, empty locally). Brand `@font-face`
 rules are injected in `app/layout.tsx` so font URLs carry the base path. No Vercel dependency.
 
@@ -47,7 +47,7 @@ scales with viewport width between two sizes known to fit at 1024×768 and 1440�
 - [ ] Airtable submission form URL (26 Sept).
 - [ ] Discord invite URL; published challenges URL.
 - [ ] Confirm postcode W1F 8ED (one message said 8EF).
-- [ ] Enable GitHub Pages (Settings → Pages → Source: GitHub Actions), then re-run the deploy workflow.
+- [x] GitHub Pages enabled (Source: GitHub Actions), deploying from `main`.
 
 ## Verification
 `npm run build`, `npm run lint`; Playwright at 1440×900, 1280×800, 1024×768 asserts no vertical or

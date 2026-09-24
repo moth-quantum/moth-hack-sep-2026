@@ -1,8 +1,11 @@
 name: Deploy to GitHub Pages
 
+# main            -> lint, build, deploy to GitHub Pages
+# any other branch / PR -> lint + build only (debugging, never deploys)
 on:
   push:
-    branches: [claude/charming-hopper-yc86fj, main]
+    branches: ["**"]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,8 +14,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  IS_DEPLOY: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
 
 jobs:
   build:
@@ -30,11 +36,13 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-      - uses: actions/upload-pages-artifact@v4
+      - if: env.IS_DEPLOY == 'true'
+        uses: actions/upload-pages-artifact@v4
         with:
           path: out
 
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
