@@ -29,7 +29,8 @@ rules are injected in `app/layout.tsx` so font URLs carry the base path. No Verc
 ## Architecture
 - `content/event.ts`: single source of truth (copy, dates, links, TBC flags).
 - `app/globals.css`: tokens (`@theme`), font stacks with fallbacks, `.page` grid, viewport lock, `rise`/`blink` keyframes, reduced-motion guard.
-- `app/page.tsx`: 3-row grid: header / hero (copy + CTAs left, TypeGrid right) / schedule + venue.
+- `app/page.tsx`: 3 rows on one shared 12-column grid (`.grid-12`). Hero: copy 5 cols, key visual 3 cols, challenges 4 cols. Footer: timeline full width, then Venue 5 · Floors 3 · Online 4, aligned with the hero columns.
+- Each fact appears once: dates in the timeline, address in Venue, links in Online.
 - `components/`: `Logo`, `TypeGrid`, `Schedule`, `Challenges`, `Cta` (+ `TextLink`).
 
 ### Challenges

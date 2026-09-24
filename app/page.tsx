@@ -28,22 +28,21 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Row 1: header */}
-      <header className="flex items-center justify-between gap-4">
-        <a href={event.organiser.href} target="_blank" rel="noopener noreferrer" aria-label="Moth" className="block">
+      <header className="grid-12">
+        <a href={event.organiser.href} target="_blank" rel="noopener noreferrer" aria-label="Moth" className="col-span-12 block w-fit">
           <Logo className="h-5 sm:h-6" />
         </a>
-        <p className="font-mono text-[0.78rem] sm:text-[0.85rem] text-right">{event.dateline}</p>
       </header>
 
-      {/* Row 2: hero */}
-      <section className="lock-fill grid gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
-        <div className="flex flex-col justify-center gap-5 lg:col-span-5 min-w-0">
+      {/* Row 2: hero. Copy (5 cols) · key visual (3 cols) · challenges (4 cols) */}
+      <section className="lock-fill grid-12 gap-y-8 lg:grid-rows-[minmax(0,1fr)]">
+        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center gap-5 min-w-0">
           <p className="rise font-mono text-[0.85rem] uppercase tracking-wide" style={{ ["--i" as string]: 0 }}>
             {event.kicker}
           </p>
           <h1
             className="rise font-medium leading-[0.92] tracking-[-0.03em] break-words"
-            style={{ ["--i" as string]: 1, fontSize: "clamp(3rem, 7.2vw, 7rem)" }}
+            style={{ ["--i" as string]: 1, fontSize: "clamp(3rem, 6.4vw, 6.5rem)" }}
           >
             Moth
             <span className="cursor" aria-hidden="true">_</span>
@@ -55,40 +54,45 @@ export default function Page() {
           <p className="rise max-w-[36ch] text-[clamp(0.95rem,1.15vw,1.1rem)] leading-snug" style={{ ["--i" as string]: 3 }}>
             {event.hook}
           </p>
-          <div className="rise flex flex-wrap gap-3 pt-1" style={{ ["--i" as string]: 4 }}>
+          <div className="rise flex flex-wrap items-center gap-3 pt-1" style={{ ["--i" as string]: 4 }}>
             <Cta link={event.links.rsvp} />
             <Cta link={event.links.submit} variant="outline" />
+            <span className="font-mono text-[0.75rem] text-moth/70">{event.smallPrint}</span>
           </div>
-          <p className="rise font-mono text-[0.75rem] text-moth/70" style={{ ["--i" as string]: 5 }}>
-            {event.smallPrint}
-          </p>
         </div>
 
-        <div className="lg:col-span-7 min-w-0 lg:min-h-0 grid gap-8 sm:grid-cols-[auto_1fr] items-start">
-          <TypeGrid cols={2} className="hidden sm:block h-[26rem] lg:h-full lg:self-stretch w-[21ch]" />
+        <div className="hidden sm:block sm:col-span-4 lg:col-span-3 min-h-0 h-[26rem] lg:h-full">
+          <TypeGrid cols={2} />
+        </div>
+
+        <div className="col-span-12 sm:col-span-8 lg:col-span-4 min-w-0">
           <Challenges />
         </div>
       </section>
 
-      {/* Row 3: schedule, venue */}
-      <footer className="grid gap-4">
+      {/* Row 3: timeline, then venue / floors / online on the same 5 · 3 · 4 columns as the hero */}
+      <footer className="grid gap-5">
         <Schedule />
-        <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] text-[0.85rem] leading-snug">
-          <p>
+        <div className="grid-12 gap-y-4 text-[0.85rem] leading-snug border-t border-moth/30 pt-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-5">
+            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Venue</h2>
             <a href={event.venue.mapsHref} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-1 underline-offset-4">
               {event.venue.name}
             </a>
-            , {event.venue.area}
-            <br />
-            <span className="text-moth/80">{event.venue.ground}</span>
-            <br />
-            <span className="text-moth/80">{event.venue.basement}</span>
-          </p>
-          <p className="text-moth/80">{event.venue.online}</p>
-          <p className="font-mono text-[0.8rem] flex flex-wrap gap-x-5 gap-y-1 items-start sm:justify-end lg:justify-end content-start">
-            <TextLink link={event.links.platform} />
-            <TextLink link={event.links.discord} />
-          </p>
+            <div>{event.venue.area}</div>
+          </div>
+          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
+            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Floors</h2>
+            <div>{event.venue.ground}</div>
+            <div>{event.venue.basement}</div>
+          </div>
+          <div className="col-span-12 lg:col-span-4">
+            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Online</h2>
+            <div className="flex flex-wrap gap-x-5 gap-y-1">
+              <TextLink link={event.links.platform} />
+              <TextLink link={event.links.discord} />
+            </div>
+          </div>
         </div>
       </footer>
     </main>

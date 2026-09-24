@@ -7,7 +7,7 @@ import { event } from "@/content/event";
 export function Challenges() {
   return (
     <section aria-labelledby="challenges-h" className="flex flex-col gap-3 min-w-0">
-      <h2 id="challenges-h" className="rise font-mono text-[0.78rem] uppercase tracking-wide" style={{ ["--i" as string]: 2 }}>
+      <h2 id="challenges-h" className="rise font-mono text-[0.72rem] uppercase tracking-wide" style={{ ["--i" as string]: 2 }}>
         Challenges · 10 · select for brief
       </h2>
       {event.challenges.map((t, ti) => (
