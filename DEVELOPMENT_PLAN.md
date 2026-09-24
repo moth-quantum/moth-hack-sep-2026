@@ -2,7 +2,7 @@
 
 ## Goal
 One public page, no scrolling on desktop and tablet landscape: title, logo, key visual, schedule,
-hybrid venue, RSVP button, submission button (form pending), platform link. Editable in v0.
+hybrid venue, RSVP button, submission button (form pending), platform link. Edited via `content/event.ts`.
 
 ## Brand (from Figma "Moth_Hack-Identity v1")
 - Concept: typographic only, terminal visual language mixed with concrete poetry, shown in motion, one colour.
