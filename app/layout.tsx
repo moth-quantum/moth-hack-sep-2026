@@ -4,7 +4,7 @@ import "./globals.css";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-// Licensed Riforma files live in /public/fonts (see public/fonts/README.md).
+// Licensed Riforma woff2 files go in public/fonts/ with the names below (not committed).
 // Declared here, not in CSS, so the URLs include the GitHub Pages base path.
 const fontFaces = [
   ["Riforma LL", "RiformaLL-Regular", 400],

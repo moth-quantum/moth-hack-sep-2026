@@ -1,13 +1,12 @@
 /**
  * Single source of truth for everything the page says.
  * Edit here. Layout never hard-codes copy, dates or links.
- * `null` links render as disabled buttons with the matching `pending` label.
+ * A `null` href renders as a disabled button with its `pending` label.
  */
 export type Link = { href: string | null; label: string; pending?: string };
 
 export const event = {
   name: "Moth Hack",
-  wordmark: "Moth_Hack", // terminal-style spelling from the identity
   kicker: "Create with Quantum Computing",
   subtitle: "London's first creative quantum hackathon",
   // Metadata only (not rendered): dates and place appear once on the page, in the timeline and venue block.
