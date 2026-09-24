@@ -2,7 +2,7 @@
 
 /* Brand @font-face rules are injected in app/layout.tsx so their URLs include the GitHub Pages base path. */
 
-/* ---------- Brand tokens (Moth_Hack-Identity v1, Figma) ---------- */
+/* Brand tokens (Moth_Hack-Identity v1, Figma) */
 @theme {
   --color-moth: #19238e;   /* Moth blue, the single identity colour */
   --color-paper: #fbfaf9;  /* off-white background */
@@ -31,7 +31,7 @@ body {
 
 :focus-visible { outline: 2px solid var(--color-moth); outline-offset: 3px; }
 
-/* ---------- One-pager lock: desktop + tablet landscape never scroll ---------- */
+/* One-pager lock: desktop + tablet landscape never scroll */
 .page {
   min-height: 100dvh;
   display: grid;
@@ -45,7 +45,7 @@ body {
   .lock-fill { min-height: 0; height: 100%; }
 }
 
-/* ---------- Motion: the identity is "primarily shown in motion" ---------- */
+/* Motion: the identity is "primarily shown in motion" */
 @keyframes rise {
   from { opacity: 0; transform: translateY(0.35em); }
   to   { opacity: 1; transform: none; }

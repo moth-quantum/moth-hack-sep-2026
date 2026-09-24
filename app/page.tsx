@@ -26,7 +26,7 @@ export default function Page() {
     <main className="page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Row 1 — header */}
+      {/* Row 1: header */}
       <header className="flex items-center justify-between gap-4">
         <a href={event.organiser.href} target="_blank" rel="noopener noreferrer" aria-label="Moth" className="block">
           <Logo className="h-5 sm:h-6" />
@@ -34,7 +34,7 @@ export default function Page() {
         <p className="font-mono text-[0.78rem] sm:text-[0.85rem] text-right">{event.dateline}</p>
       </header>
 
-      {/* Row 2 — hero */}
+      {/* Row 2: hero */}
       <section className="lock-fill grid gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
         <div className="flex flex-col justify-center gap-5 lg:col-span-5 min-w-0">
           <p className="rise font-mono text-[0.85rem] uppercase tracking-wide" style={{ ["--i" as string]: 0 }}>
@@ -71,7 +71,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Row 3 — schedule + venue */}
+      {/* Row 3: schedule, venue */}
       <footer className="grid gap-4">
         <Schedule />
         <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] text-[0.85rem] leading-snug">

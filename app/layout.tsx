@@ -19,10 +19,10 @@ const fontFaces = [
   .join("");
 
 export const metadata: Metadata = {
-  title: `${event.name} 2026 — ${event.kicker}`,
+  title: `${event.name} 2026 | ${event.kicker}`,
   description: `${event.subtitle}. ${event.dateline}. ${event.hook}`,
   openGraph: {
-    title: `${event.name} 2026 — ${event.kicker}`,
+    title: `${event.name} 2026 | ${event.kicker}`,
     description: `${event.subtitle}. ${event.dateline}.`,
     type: "website",
     locale: "en_GB",
