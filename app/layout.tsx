@@ -19,6 +19,7 @@ const fontFaces = [
   .join("");
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://moth-quantum.github.io"),
   title: `${event.name} 2026 | ${event.kicker}`,
   description: `${event.subtitle}. ${event.dateline}. ${event.hook}`,
   openGraph: {
@@ -26,7 +27,10 @@ export const metadata: Metadata = {
     description: `${event.subtitle}. ${event.dateline}.`,
     type: "website",
     locale: "en_GB",
+    siteName: "Moth",
+    url: `${base}/`,
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
