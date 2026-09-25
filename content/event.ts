@@ -49,7 +49,7 @@ export const event = {
       prize: "£150 prize per challenge",
       items: [
         { n: 4, title: "Moving image", brief: "Use at least one engine in a video piece. Any format." },
-        { n: 5, title: "Quantum game (Eligible for Global Quantum Game Jam)", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam.", briefLink: { text: "Quantum Game Jam", link: "GQGJ" } },
+        { n: 5, title: "Quantum game (Eligible for Global Quantum Game Jam)", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Global Quantum Game Jam.", briefLink: { text: "Global Quantum Game Jam", link: "GQGJ" } },
         { n: 6, title: "Daisy Chain", brief: "Use as many engines as possible in a single project. Measured on number and effective use." },
         { n: 7, title: "Make a VST or AU", brief: "Build a music plugin using at least one engine. Submit the plugin and audio examples of it in use." },
         { n: 8, title: "Make a web app", brief: "Build a web app that calls the Atlas API. Submit a link and a short description of what it does." },
@@ -66,10 +66,11 @@ export const event = {
   ],
 
   links: {
-    rsvp: { href: "https://luma.com/wmrrdpcj", label: "RSVP (Luma)" } as Link,
+    rsvp: { href: "https://luma.com/wmrrdpcj", label: "RSVP" } as Link,
     submit: { href: null, label: "Submit your project", pending: "Submit project" } as Link,
     platform: { href: "https://platform.mothquantum.com", label: "platform.mothquantum.com" } as Link,
     discord: { href: "https://discord.gg/N9y6URcYS", label: "Discord" } as Link,
+    joinDiscord: { href: "https://discord.gg/N9y6URcYS", label: "Join Discord" } as Link,
     opening: { href: "https://luma.com/2myo5mu4", label: "Opening" } as Link,
     GQGJ: { href: "https://itch.io/jam/quantum-game-jam-2026", label: "Global Quantum Game Jam" } as Link,
   },

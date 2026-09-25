@@ -79,7 +79,7 @@ body {
 .challenge-pop::backdrop { background: rgb(25 35 142 / 0.18); }
 
 /* Shared 12-column grid: header, hero and footer align on the same columns */
-.grid-12 {
+@utility grid-12 {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(1rem, 2vw, 2.5rem);

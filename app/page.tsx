@@ -56,6 +56,7 @@ export default function Page() {
           </p>
           <div className="rise flex flex-wrap items-center gap-3 pt-1" style={{ ["--i" as string]: 4 }}>
             <Cta link={event.links.rsvp} />
+            <Cta link={event.links.joinDiscord} variant="outline" />
             <Cta link={event.links.submit} variant="outline" />
           </div>
         </div>
@@ -69,7 +70,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Row 3: timeline, then venue (cols 1 to 5) and online (cols 9 to 12), under the hero copy and challenges */}
+      {/* Row 3: timeline and venue / online on the hero grid. Column starts 1, 6 and 9 match copy, graphic and challenges. */}
       <footer className="grid gap-5">
         <Schedule />
         <div className="grid-12 gap-y-4 text-[0.85rem] leading-snug border-t border-moth/30 pt-3">
