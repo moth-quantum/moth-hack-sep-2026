@@ -36,6 +36,7 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
       - if: env.IS_DEPLOY == 'true'
         uses: actions/upload-pages-artifact@v4
         with:

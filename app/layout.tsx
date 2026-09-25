@@ -3,6 +3,8 @@ import { event } from "@/content/event";
 import "./globals.css";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+// Site origin from the Pages settings at deploy time (custom domain), so link previews use absolute URLs.
+const origin = process.env.NEXT_PUBLIC_SITE_ORIGIN || "https://hack.mothquantum.com";
 
 // Licensed Riforma woff2 files go in public/fonts/ with the names below (not committed).
 // Declared here, not in CSS, so the URLs include the GitHub Pages base path.
@@ -19,7 +21,7 @@ const fontFaces = [
   .join("");
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moth-quantum.github.io"),
+  metadataBase: new URL(origin),
   title: `${event.name} 2026 | ${event.kicker}`,
   description: `${event.subtitle}. ${event.dateline}. ${event.hook}`,
   openGraph: {
