@@ -74,7 +74,7 @@ export default function Page() {
         <Schedule />
         <div className="grid-12 gap-y-4 text-[0.85rem] leading-snug border-t border-moth/30 pt-3">
           <div className="col-span-12 sm:col-span-6 lg:col-span-5">
-            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Venue</h2>
+            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Popup venue</h2>
             <a href={event.venue.mapsHref} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-1 underline-offset-4">
               {event.venue.name}
             </a>
