@@ -1,11 +1,24 @@
+"use client";
+
 import { event } from "@/content/event";
 
 const POP_ID = "agenda";
 
+/** Expand the chosen day (never collapse the other) and bring it into view once the window is shown. */
+function focusDay(id: string) {
+  requestAnimationFrame(() => {
+    const day = document.getElementById(`agenda-${id}`) as HTMLDetailsElement | null;
+    if (!day) return;
+    day.open = true;
+    day.scrollIntoView({ block: "start" });
+  });
+}
+
 /**
- * Footer trigger plus the Agenda window (native popover, no JS).
+ * Footer triggers plus the Agenda window (native popover).
  * Each day is its own <details>, with no `name`, so days open and close
  * independently and both can stay open. State persists while the window is hidden.
+ * A date trigger opens the window on that day without collapsing the other.
  */
 export function Agenda() {
   return (
@@ -17,9 +30,10 @@ export function Agenda() {
             key={d.id}
             type="button"
             popoverTarget={POP_ID}
+            onClick={() => focusDay(d.id)}
             className="text-left underline decoration-1 underline-offset-4 hover:decoration-2 cursor-pointer"
           >
-            {d.day.split(" ")[0]} · {d.sessions.length} sessions
+            {d.day.split(" ")[0]}
           </button>
         ))}
       </div>
@@ -27,7 +41,7 @@ export function Agenda() {
       <div id={POP_ID} popover="auto" className="challenge-pop agenda-pop" role="dialog" aria-labelledby="agenda-h">
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-paper border-b border-moth/30 px-5 py-3 sm:px-6">
           <h2 id="agenda-h" className="font-mono text-[0.78rem] uppercase tracking-wide">
-            Agenda · Popup venue
+            Agenda
           </h2>
           <button
             type="button"
@@ -41,13 +55,10 @@ export function Agenda() {
 
         <div className="px-5 pb-5 sm:px-6">
           {event.agenda.map((d) => (
-            <details key={d.id} open className="agenda-day border-b border-moth/30 last:border-b-0">
+            <details key={d.id} id={`agenda-${d.id}`} open className="agenda-day scroll-mt-16 border-b border-moth/30 last:border-b-0">
               <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-4 py-3 list-none">
                 <span className="text-[1.05rem] font-medium">{d.day}</span>
-                <span className="flex items-center gap-3 font-mono text-[0.72rem] uppercase tracking-wide">
-                  {d.sessions.length} sessions
-                  <span aria-hidden="true" className="agenda-chevron inline-block">▸</span>
-                </span>
+                <span aria-hidden="true" className="agenda-chevron inline-block font-mono text-[0.72rem]">▸</span>
               </summary>
               <ol className="pb-3">
                 {d.sessions.map((s) => (

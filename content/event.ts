@@ -18,7 +18,7 @@ export const event = {
   dates: { start: "2026-09-26T10:00:00+01:00", end: "2026-09-27T17:00:00+01:00" },
 
   schedule: [
-    { day: "Fri 25 Sept", label: "Moth Hack opening", note: "16:00 to 22:00", link: "opening" },
+    { day: "Fri 25 Sept", label: "Moth Hack opening", note: "17:30 to 22:00", link: "opening" },
     { day: "Sat 26 Sept", label: "Hack Popup Day 01", note: "10:00 to 18:00" },
     { day: "Sun 27 Sept", label: "Hack Popup Day 02", note: "11:00 to 17:00" },
     { day: "26 Sept to 2 Oct", label: "Virtual hackathon", note: "Worldwide" },
