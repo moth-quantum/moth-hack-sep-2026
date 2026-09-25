@@ -8,7 +8,7 @@ export type Link = { href: string | null; label: string; pending?: string };
 export const event = {
   name: "Moth Hack",
   kicker: "Create with Quantum Computing",
-  subtitle: "London's first creative quantum hackathon",
+  subtitle: "Virtual hackathon with London pop-up event",
   // Metadata only (not rendered): dates and place appear once on the page, in the timeline and venue block.
   dateline: "26 + 27 Sept 2026, Soho, London",
   // Official copy (approved 4 Sept): keep verbatim, including the dash.
@@ -18,10 +18,10 @@ export const event = {
   dates: { start: "2026-09-26T10:00:00+01:00", end: "2026-09-27T17:00:00+01:00" },
 
   schedule: [
-    { day: "Fri 25 Sept", label: "Private opening", note: "Invite only" },
-    { day: "Sat 26 Sept", label: "Hackathon", note: "10:00 to 18:00" },
-    { day: "Sun 27 Sept", label: "Hackathon, showcase", note: "11:00 to 17:00" },
-    { day: "26 Sept to 2 Oct", label: "Submissions open", note: "Worldwide" },
+    { day: "Fri 25 Sept", label: "Moth Hack opening", note: "16:00 to 22:00" },
+    { day: "Sat 26 Sept", label: "Hack Popup Day 01", note: "10:00 to 18:00" },
+    { day: "Sun 27 Sept", label: "Hack Popup Day 02", note: "11:00 to 17:00" },
+    { day: "26 Sept to 2 Oct", label: "Virtual hackathon", note: "Worldwide" },
     { day: "Mon 5 Oct", label: "Winners announced", note: "On Discord" },
   ],
 
@@ -29,8 +29,8 @@ export const event = {
     name: "19 D'Arblay Street",
     area: "Soho, London W1F 8ED", // TBC: confirm 8ED vs 8EF
     mapsHref: "https://maps.google.com/?q=19+D'Arblay+Street+London+W1F+8ED",
-    ground: "Ground floor: exhibition, demos, walk-in",
-    basement: "Basement: hackathon lounge, RSVP, 3-hour slots",
+    // ground: "Ground floor: exhibition, demos, walk-in",
+    // basement: "Basement: hackathon lounge, RSVP, 3-hour slots",
   },
 
   // Challenge copy supplied by the Moth team (24 Sept). Keep verbatim.
@@ -49,7 +49,7 @@ export const event = {
       prize: "£150 prize per challenge",
       items: [
         { n: 4, title: "Moving image", brief: "Use at least one engine in a video piece. Any format." },
-        { n: 5, title: "Quantum game", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam." },
+        { n: 5, title: "Quantum game (Eligible for Global Quantum Game Jam", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam." },
         { n: 6, title: "Daisy Chain", brief: "Use as many engines as possible in a single project. Measured on number and effective use." },
         { n: 7, title: "Make a VST or AU", brief: "Build a music plugin using at least one engine. Submit the plugin and audio examples of it in use." },
         { n: 8, title: "Make a web app", brief: "Build a web app that calls the Atlas API. Submit a link and a short description of what it does." },
@@ -70,6 +70,8 @@ export const event = {
     submit: { href: null, label: "Submit your project", pending: "Submit project" } as Link,
     platform: { href: "https://platform.mothquantum.com", label: "platform.mothquantum.com" } as Link,
     discord: { href: "https://discord.gg/N9y6URcYS", label: "Discord" } as Link,
+    opening: { href: "https://luma.com/2myo5mu4", label: "Opening" } as Link,
+    GQGJ: { href: "https://itch.io/jam/quantum-game-jam-2026", label: "Global Quantum Game Jam" } as Link,
   },
 
   organiser: { name: "Moth", href: "https://mothquantum.com" },
