@@ -33,6 +33,40 @@ export const event = {
     // basement: "Basement: hackathon lounge, RSVP, 3-hour slots",
   },
 
+  // Pop-up agenda (Moth team, 25 Sept). Key facts only: title, speaker, minutes; `detail` is hidden on phones.
+  agenda: [
+    {
+      id: "sat",
+      day: "Saturday 26 Sept",
+      sessions: [
+        { time: "10:00", title: "Space opens to the public" },
+        { time: "10:30", mins: 15, who: "Harry", title: "Welcome, introducing Moth" },
+        { time: "11:00", mins: 25, who: "Natasha", title: "Quantum games and an introduction to the Quantum Game Jam" },
+        { time: "11:30", mins: 25, who: "James", title: "What is quantum computing?", detail: "Including examples of quantum games: proc gen presentation." },
+        { time: "12:00", mins: 20, who: "Spencer", title: "Introducing Atlas", detail: "How to use the web app and API. Today's schedule and expectations. How to submit your projects." },
+        { time: "12:30", mins: 20, who: "Daniel", title: "Deep dive on the Tessa Image engine", detail: "With inspiring examples." },
+        { time: "14:00", mins: 20, who: "João", title: "Engines deep dive: Blur and Entanglement Shader" },
+        { time: "14:30", mins: 25, who: "Declan", title: "Vibecoding apps for new creative practices?" },
+        { time: "15:30", mins: 25, who: "Stewart", title: "An introduction to quantum computing fundamentals for non-experts" },
+        { time: "16:00", mins: 25, who: "Spencer", title: "Deep dive on Quantum Backrooms" },
+        { time: "18:00", mins: 10, who: "Harry and team", title: "End of day wrap up" },
+        { time: "19:00", title: "Beers and pizza in the space", detail: "For London hack members." },
+      ],
+    },
+    {
+      id: "sun",
+      day: "Sunday 27 Sept",
+      sessions: [
+        { time: "10:00", title: "Space opens to the public" },
+        { time: "10:30", mins: 10, who: "Harry and team", title: "Welcome back, recap", detail: "Today's schedule and expectations." },
+        { time: "11:00", mins: 25, who: "Spencer", title: "Introducing Atlas, the Moth platform: recap", detail: "Reminder on how to submit your projects." },
+        { time: "14:00", mins: 10, who: "Harry", title: "Post-lunch hackathon updates" },
+        { time: "14:30", mins: 25, who: "Declan", title: "Vibecoding apps for new creative practices?", detail: "Different app walkthrough." },
+        { time: "18:00", mins: 15, who: "Harry", title: "End of day wrap up", detail: "Space closes to the public." },
+      ],
+    },
+  ],
+
   // Challenge copy supplied by the Moth team (24 Sept). Keep verbatim.
   challenges: [
     {
