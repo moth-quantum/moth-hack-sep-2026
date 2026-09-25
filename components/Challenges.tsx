@@ -1,5 +1,23 @@
 import { event } from "@/content/event";
 
+type LinkKey = keyof typeof event.links;
+
+/** Brief text, with one phrase linked when the item names it (e.g. Quantum Game Jam). */
+function Brief({ text, briefLink }: { text: string; briefLink?: { text: string; link: LinkKey } }) {
+  const href = briefLink ? event.links[briefLink.link].href : null;
+  const at = briefLink ? text.indexOf(briefLink.text) : -1;
+  if (!briefLink || !href || at < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, at)}
+      <a href={href} target="_blank" rel="noopener noreferrer" className="underline decoration-1 underline-offset-4 hover:decoration-2">
+        {briefLink.text}
+      </a>
+      {text.slice(at + briefLink.text.length)}
+    </>
+  );
+}
+
 /**
  * Tier, prize and numbered title per challenge. The full brief opens in a native
  * popover (no JS), so the page stays one screen tall.
@@ -35,7 +53,9 @@ export function Challenges() {
                     <span>{t.prize}</span>
                   </div>
                   <h3 className="mt-3 text-[1.5rem] font-medium leading-tight">{c.title}</h3>
-                  <p className="mt-2 leading-snug">{c.brief}</p>
+                  <p className="mt-2 leading-snug">
+                    <Brief text={c.brief} briefLink={"briefLink" in c ? c.briefLink : undefined} />
+                  </p>
                   <button
                     type="button"
                     popoverTarget={`challenge-${c.n}`}

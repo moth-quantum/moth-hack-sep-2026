@@ -69,7 +69,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Row 3: timeline, then venue / floors / online on the same 5 · 3 · 4 columns as the hero */}
+      {/* Row 3: timeline, then venue (cols 1 to 5) and online (cols 9 to 12), under the hero copy and challenges */}
       <footer className="grid gap-5">
         <Schedule />
         <div className="grid-12 gap-y-4 text-[0.85rem] leading-snug border-t border-moth/30 pt-3">
@@ -80,7 +80,7 @@ export default function Page() {
             </a>
             <div>{event.venue.area}</div>
           </div>
-          <div className="col-span-12 lg:col-span-4">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-4 lg:col-start-9">
             <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Online</h2>
             <div className="flex flex-wrap gap-x-5 gap-y-1">
               <TextLink link={event.links.platform} />

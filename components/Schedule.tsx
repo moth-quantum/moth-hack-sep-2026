@@ -16,7 +16,15 @@ export function Schedule() {
           >
             <span aria-hidden="true" className="absolute size-3 rounded-full bg-moth -left-[7.5px] top-0.5 lg:left-0 lg:-top-[7.5px]" />
             <div className="font-mono text-[0.72rem] uppercase tracking-wide text-moth/70">{s.day}</div>
-            <div className="font-medium leading-snug text-[0.95rem]">{s.label}</div>
+            <div className="font-medium leading-snug text-[0.95rem]">
+              {"link" in s && event.links[s.link].href ? (
+                <a href={event.links[s.link].href ?? undefined} target="_blank" rel="noopener noreferrer" className="underline decoration-1 underline-offset-4 hover:decoration-2">
+                  {s.label}
+                </a>
+              ) : (
+                s.label
+              )}
+            </div>
             {s.note && <div className="text-[0.8rem] text-moth/70 leading-snug">{s.note}</div>}
           </li>
         ))}

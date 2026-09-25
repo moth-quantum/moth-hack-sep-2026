@@ -18,7 +18,7 @@ export const event = {
   dates: { start: "2026-09-26T10:00:00+01:00", end: "2026-09-27T17:00:00+01:00" },
 
   schedule: [
-    { day: "Fri 25 Sept", label: "Moth Hack opening", note: "16:00 to 22:00" },
+    { day: "Fri 25 Sept", label: "Moth Hack opening", note: "16:00 to 22:00", link: "opening" },
     { day: "Sat 26 Sept", label: "Hack Popup Day 01", note: "10:00 to 18:00" },
     { day: "Sun 27 Sept", label: "Hack Popup Day 02", note: "11:00 to 17:00" },
     { day: "26 Sept to 2 Oct", label: "Virtual hackathon", note: "Worldwide" },
@@ -49,7 +49,7 @@ export const event = {
       prize: "£150 prize per challenge",
       items: [
         { n: 4, title: "Moving image", brief: "Use at least one engine in a video piece. Any format." },
-        { n: 5, title: "Quantum game (Eligible for Global Quantum Game Jam", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam." },
+        { n: 5, title: "Quantum game (Eligible for Global Quantum Game Jam)", brief: "Use at least one engine in the making of a game, for example a browser game whose sprites are generated with Tessa. Bonus: submit it to the Quantum Game Jam.", briefLink: { text: "Quantum Game Jam", link: "GQGJ" } },
         { n: 6, title: "Daisy Chain", brief: "Use as many engines as possible in a single project. Measured on number and effective use." },
         { n: 7, title: "Make a VST or AU", brief: "Build a music plugin using at least one engine. Submit the plugin and audio examples of it in use." },
         { n: 8, title: "Make a web app", brief: "Build a web app that calls the Atlas API. Submit a link and a short description of what it does." },
