@@ -80,11 +80,6 @@ export default function Page() {
             </a>
             <div>{event.venue.area}</div>
           </div>
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
-            <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Floors</h2>
-            <div>{event.venue.ground}</div>
-            <div>{event.venue.basement}</div>
-          </div>
           <div className="col-span-12 lg:col-span-4">
             <h2 className="font-mono text-[0.72rem] uppercase tracking-wide mb-1">Online</h2>
             <div className="flex flex-wrap gap-x-5 gap-y-1">
