@@ -98,6 +98,15 @@ export const event = {
     },
   ],
 
+  // Judging criteria (Moth team, 26 Sept). Keep verbatim.
+  judging: {
+    criteria: ["Quality of execution", "Depth of quantum and Atlas usage", "Originality"],
+    notes: [
+      "Entries are judged relative to their tier.",
+      "Above all, make work that contributes to the frontier of contemporary culture and quantum computing!",
+    ],
+  },
+
   links: {
     rsvp: { href: "https://luma.com/wmrrdpcj", label: "RSVP" } as Link,
     submit: { href: "https://airtable.com/appsrkUE9iVgeGsH5/pagdAHP56ovMdYX7x/form", label: "Submit project" } as Link,

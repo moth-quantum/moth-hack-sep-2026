@@ -70,6 +70,44 @@ export function Challenges() {
           </ol>
         </div>
       ))}
+
+      <div className="rise min-w-0 border-t border-moth/40 pt-1" style={{ ["--i" as string]: 6 }}>
+        <button
+          type="button"
+          popoverTarget="judging"
+          className="flex w-full items-baseline justify-between gap-3 py-[0.18rem] text-left font-mono text-[0.72rem] uppercase tracking-wide cursor-pointer hover:underline decoration-1 underline-offset-4"
+        >
+          <span className="font-bold">Judging criteria</span>
+          <span aria-hidden="true">▸</span>
+        </button>
+        <div id="judging" popover="auto" className="challenge-pop" role="dialog" aria-labelledby="judging-h">
+          <div className="font-mono text-[0.72rem] uppercase tracking-wide">All challenges</div>
+          <h3 id="judging-h" className="mt-3 text-[1.5rem] font-medium leading-tight">
+            Judging criteria
+          </h3>
+          <ol className="mt-3">
+            {event.judging.criteria.map((c, i) => (
+              <li key={c} className="flex items-baseline gap-3 border-t border-moth/15 py-[0.4rem] first:border-t-0">
+                <span className="font-mono text-[0.75rem] tabular-nums w-5 shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                <span className="leading-snug">{c}</span>
+              </li>
+            ))}
+          </ol>
+          {event.judging.notes.map((n) => (
+            <p key={n} className="mt-3 leading-snug">
+              {n}
+            </p>
+          ))}
+          <button
+            type="button"
+            popoverTarget="judging"
+            popoverTargetAction="hide"
+            className="mt-5 inline-flex min-h-11 items-center rounded-full border border-moth px-5 text-[0.9rem] hover:bg-moth hover:text-paper cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
