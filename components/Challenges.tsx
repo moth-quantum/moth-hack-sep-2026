@@ -24,9 +24,9 @@ function Brief({ text, briefLink }: { text: string; briefLink?: { text: string; 
  */
 export function Challenges() {
   return (
-    <section aria-labelledby="challenges-h" className="flex flex-col gap-3 min-w-0">
+    <section aria-labelledby="challenges-h" className="flex flex-col gap-3 [@media(max-height:860px)]:gap-1.5 min-w-0">
       <h2 id="challenges-h" className="rise font-mono text-[0.72rem] uppercase tracking-wide" style={{ ["--i" as string]: 2 }}>
-        Challenges · 10 · select for brief
+        Challenges · {event.challenges.reduce((n, t) => n + t.items.length, 0)} · select for brief
       </h2>
       {event.challenges.map((t, ti) => (
         <div key={t.tier} className="rise min-w-0" style={{ ["--i" as string]: 3 + ti }}>
@@ -40,7 +40,7 @@ export function Challenges() {
                 <button
                   type="button"
                   popoverTarget={`challenge-${c.n}`}
-                  className="flex w-full items-baseline gap-3 py-[0.18rem] text-left text-[clamp(0.9rem,1.1vw,1.05rem)] font-medium hover:underline decoration-1 underline-offset-4 cursor-pointer"
+                  className="flex w-full items-baseline gap-3 py-[0.18rem] [@media(max-height:860px)]:py-[0.05rem] text-left text-[clamp(0.9rem,1.1vw,1.05rem)] font-medium hover:underline decoration-1 underline-offset-4 cursor-pointer"
                 >
                   <span className="font-mono text-[0.75rem] tabular-nums w-5 shrink-0">{String(c.n).padStart(2, "0")}</span>
                   <span>{c.title}</span>
@@ -56,14 +56,26 @@ export function Challenges() {
                   <p className="mt-2 leading-snug">
                     <Brief text={c.brief} briefLink={"briefLink" in c ? c.briefLink : undefined} />
                   </p>
-                  <button
-                    type="button"
-                    popoverTarget={`challenge-${c.n}`}
-                    popoverTargetAction="hide"
-                    className="mt-5 inline-flex min-h-11 items-center rounded-full border border-moth px-5 text-[0.9rem] hover:bg-moth hover:text-paper cursor-pointer"
-                  >
-                    Close
-                  </button>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      popoverTarget={`challenge-${c.n}`}
+                      popoverTargetAction="hide"
+                      className="inline-flex min-h-11 items-center rounded-full border border-moth px-5 text-[0.9rem] hover:bg-moth hover:text-paper cursor-pointer"
+                    >
+                      Close
+                    </button>
+                    {"site" in c && event.links[c.site].href && (
+                      <a
+                        href={event.links[c.site].href!}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 items-center rounded-full bg-moth px-5 text-[0.9rem] text-paper hover:bg-ink"
+                      >
+                        {event.links[c.site].label}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </li>
             ))}
@@ -71,7 +83,7 @@ export function Challenges() {
         </div>
       ))}
 
-      <div className="rise min-w-0" style={{ ["--i" as string]: 6 }}>
+      <div className="rise min-w-0" style={{ ["--i" as string]: 3 + event.challenges.length }}>
         <button
           type="button"
           popoverTarget="judging"

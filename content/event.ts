@@ -96,6 +96,13 @@ export const event = {
         { n: 10, title: "Quantum-native 2", brief: "Provide a python notebook demonstrating how you've used the API to build a workflow generating some kind of media or application (e.g. a game)." },
       ],
     },
+    {
+      tier: "Guest Challenge",
+      prize: "£150 prize",
+      items: [
+        { n: 11, title: "FQxI Challenge", brief: "Make an educational app or piece of content, teaching a general audience something about quantum computing or mechanics. All submissions must use at least one of Moth's Atlas Engines.", site: "fqxi" },
+      ],
+    },
   ],
 
   // Judging criteria (Moth team, 26 Sept). Keep verbatim.
@@ -114,6 +121,7 @@ export const event = {
     discord: { href: "https://discord.gg/N9y6URcYS", label: "Discord" } as Link,
     joinDiscord: { href: "https://discord.gg/N9y6URcYS", label: "Join Discord" } as Link,
     opening: { href: "https://luma.com/2myo5mu4", label: "Opening" } as Link,
+    fqxi: { href: "https://fqxi.org", label: "FQxI website" } as Link,
     GQGJ: { href: "https://itch.io/jam/quantum-game-jam-2026", label: "Global Quantum Game Jam" } as Link,
   },
 
