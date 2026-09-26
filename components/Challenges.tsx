@@ -71,11 +71,11 @@ export function Challenges() {
         </div>
       ))}
 
-      <div className="rise min-w-0 border-t border-moth/40 pt-1" style={{ ["--i" as string]: 6 }}>
+      <div className="rise min-w-0" style={{ ["--i" as string]: 6 }}>
         <button
           type="button"
           popoverTarget="judging"
-          className="flex w-full items-baseline justify-between gap-3 py-[0.18rem] text-left font-mono text-[0.72rem] uppercase tracking-wide cursor-pointer hover:underline decoration-1 underline-offset-4"
+          className="flex w-full items-baseline justify-between gap-3 bg-moth text-paper px-2 py-[0.3rem] text-left font-mono text-[0.72rem] uppercase tracking-wide cursor-pointer transition-colors hover:bg-ink"
         >
           <span className="font-bold">Judging criteria</span>
           <span aria-hidden="true">▸</span>
