@@ -35,9 +35,9 @@ export default function Page() {
         </a>
       </header>
 
-      {/* Row 2: hero. Copy (5 cols) · key visual (3 cols) · challenges (4 cols) */}
+      {/* Row 2: hero. Desktop: copy 5 · key visual 3 · challenges 4. Tablet: copy 8 + key visual 4, challenges full width below. Phone: stacked, no key visual. */}
       <section className="lock-fill grid-12 gap-y-8 lg:grid-rows-[minmax(0,1fr)]">
-        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center gap-5 min-w-0">
+        <div className="col-span-12 sm:col-span-8 lg:col-span-5 flex flex-col justify-center gap-5 min-w-0">
           <p className="rise font-mono text-[0.85rem] uppercase tracking-wide" style={{ ["--i" as string]: 0 }}>
             {event.kicker}
           </p>
@@ -62,11 +62,13 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="hidden sm:block sm:col-span-4 lg:col-span-3 min-h-0 h-[26rem] lg:h-full">
-          <TypeGrid cols={2} />
+        <div className="relative hidden sm:block sm:col-span-4 lg:col-span-3 min-h-0">
+          <div className="absolute inset-0">
+            <TypeGrid cols={2} />
+          </div>
         </div>
 
-        <div className="col-span-12 sm:col-span-8 lg:col-span-4 min-w-0">
+        <div className="col-span-12 lg:col-span-4 min-w-0">
           <Challenges />
         </div>
       </section>
