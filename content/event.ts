@@ -21,8 +21,8 @@ export const event = {
     { day: "Fri 25 Sept", label: "Moth Hack opening", note: "17:30 to 22:00", link: "opening" },
     { day: "Sat 26 Sept", label: "Hack Popup Day 01", note: "10:00 to 18:00" },
     { day: "Sun 27 Sept", label: "Hack Popup Day 02", note: "11:00 to 17:00" },
-    { day: "26 Sept to 2 Oct", label: "Virtual hackathon", note: "Worldwide" },
-    { day: "Mon 5 Oct", label: "Winners announced", note: "On Discord" },
+    { day: "26 Sept to 5 Oct (PT)", label: "Virtual hackathon", note: "Worldwide" },
+    { day: "Wed 7 Oct", label: "Winners announced", note: "On Discord" },
   ],
 
   venue: {
