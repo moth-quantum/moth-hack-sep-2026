@@ -116,7 +116,7 @@ export const event = {
 
   links: {
     rsvp: { href: "https://luma.com/wmrrdpcj", label: "RSVP" } as Link,
-    submit: { href: "https://airtable.com/appsrkUE9iVgeGsH5/pagdAHP56ovMdYX7x/form", label: "Submit project" } as Link,
+    winners: { href: "https://airtable.com/appfaqE6MpACGX3LN/shrKxNCu6BKEnDRVs", label: "Winners and entries" } as Link,
     platform: { href: "https://platform.mothquantum.com", label: "platform.mothquantum.com" } as Link,
     discord: { href: "https://discord.gg/N9y6URcYS", label: "Discord" } as Link,
     joinDiscord: { href: "https://discord.gg/N9y6URcYS", label: "Join Discord" } as Link,

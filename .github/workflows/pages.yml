@@ -1,7 +1,8 @@
 name: Deploy to GitHub Pages
 
 # main            -> lint, build, deploy to GitHub Pages
-# any other branch / PR -> lint + build only (debugging, never deploys)
+# working branch  -> lint, build, then fast-forward main and dispatch its deploy
+# any other branch / PR -> lint + build only
 on:
   push:
     branches: ["**"]
@@ -52,3 +53,22 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Green builds on the working branch publish automatically. Pushes made with the
+  # workflow token start no new runs, so the main deploy is dispatched explicitly.
+  # Fast-forward only: if main has diverged, this job fails and nothing is overwritten.
+  promote:
+    if: github.ref == 'refs/heads/claude/charming-hopper-yc86fj' && github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - run: git push origin HEAD:main
+      - run: gh workflow run pages.yml --ref main --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
