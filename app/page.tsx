@@ -56,9 +56,8 @@ export default function Page() {
             {event.hook}
           </p>
           <div className="rise flex flex-wrap items-center gap-3 pt-1" style={{ ["--i" as string]: 4 }}>
-            <Cta link={event.links.rsvp} />
+            <Cta link={event.links.winners} />
             <Cta link={event.links.joinDiscord} variant="outline" />
-            <Cta link={event.links.winners} variant="outline" />
           </div>
         </div>
 
